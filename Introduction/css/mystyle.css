@@ -5,3 +5,8 @@ h1 {
   color: navy;
   margin-left: 20px;
 }
+
+.center {
+  text-align: center;
+  color: red;
+}
