@@ -1,11 +1,21 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
   background-color: LightBlue;
 }
  
 .container div {
   background-color: #f1f1f1;
   margin: 10px;
-  padding: 20px;
-  font-size: 24px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px; 
+  flex: 1 1 30%; 
+  box-sizing: border-box;
+  word-wrap: break-word; 
+}
+ 
+.container div img {
+  max-width: 100%; 
+  height: auto;
 }
