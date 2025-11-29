@@ -6,16 +6,59 @@
     "footer footer";
   grid-template-columns: 1fr 3fr;
   gap: 3px;
-  background-color: dodgerblue;
+
+  background-color: #b4d4ff; 
   padding: 5px;
 }
 
 .container div {
-  background-color: white;
+  background-color: #ffffff;
   padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.header { grid-area: header; text-align:center; }
-.menu { grid-area: menu; }
-.content { grid-area: content; }
-.footer { grid-area: footer; text-align:center; }
+.container div.header {
+  grid-area: header;
+  text-align: center;
+
+  background: linear-gradient(135deg, #5d87ff, #7aa7ff);
+  color: white;
+}
+
+.container div.menu {
+  grid-area: menu;
+
+  background-color: #e9f1ff;
+  border-left: 4px solid #5d87ff;
+}
+
+.container div.menu a {
+  color: #355be0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container div.menu a:hover {
+  color: #1e39a3;
+}
+
+.container div.content {
+  grid-area: content;
+
+  background-color: #ffffff;
+}
+
+.container div.content h3 {
+  color: #2a4ad4;
+  margin-top: 10px;
+}
+
+.container div.footer {
+  grid-area: footer;
+  text-align: center;
+
+  background: #5d87ff;
+  color: white;
+  border-radius: 8px;
+}
