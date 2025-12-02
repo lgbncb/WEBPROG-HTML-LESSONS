@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>WEBPROG SF241 Introduction</title>
-</head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>    
 <body>
  
 <h1>Personal Profile Web page - Lance Buncab </h1>
@@ -28,8 +31,37 @@ Goals In Life / Dream<br>
  - To be successful in the tech industry <br>
  - To be an airline pilot <br>
 Picture Gallery<br>
-<img src="https://media.licdn.com/dms/image/v2/D5603AQEbUSXfPASHQw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726117089075?e=2147483647&v=beta&t=nGx1_uo571aLPyDCBy2P2bZzres2AA2NbGs2xR63yTk" alt="LinkedIn Photo of Myself" width="500" height="600">
-
+<img src="https://media.licdn.com/dms/image/v2/D5603AQEbUSXfPASHQw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726117089075?e=2147483647&v=beta&t=nGx1_uo571aLPyDCBy2P2bZzres2AA2NbGs2xR63yTk" 
+alt="LinkedIn Photo of Myself" width="500" height="600">
 </p>
+
+
+
+<div class="container-fluid mt-3">
+  <h1>Responsive Auto Layout Columns</h1>
+  <p>In Bootstrap 5, there is an easy way to create equal width columns: just use the <code>.col-md</code> class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.</p>
+  <p>If the screen size is <strong>less than 768px</strong>, the columns will stack horizontally.</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md bg-primary text-white">1 of 2</div>
+      <div class="col-md bg-dark text-white">2 of 2</div>
+    </div>  
+  </div>
+  <br>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md bg-primary text-white">1 of 4</div>
+      <div class="col-md bg-dark text-white">2 of 4</div>
+      <div class="col-md bg-primary text-white">3 of 4</div>
+      <div class="col-md bg-dark text-white">4 of 4</div>
+    </div>  
+  </div>
+</div>
+
+
+
+
+
 </body>
 </html>
