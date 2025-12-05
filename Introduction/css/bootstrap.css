@@ -1,0 +1,26 @@
+body {
+    background-color: #f8f9fa; 
+}
+
+.header-banner {
+    background-color: #a9a9a9;
+    color: #020202;
+}
+
+.slate-dark-header {
+    color: #1F2937;
+}
+
+.soft-blue-header {
+    color: #3B82F6;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
