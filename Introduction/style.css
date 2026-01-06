@@ -59,13 +59,36 @@ nav ul li a:hover {
     color: white !important;
 }
 
-/* Hero Section */
+/* Banner Section */
 .hero {
+    position: relative;
     height: 80vh;
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
 }
 
 .hero-overlay {
+    position: relative;
+    z-index: 2;
     height: 100%;
     width: 100%;
     background: linear-gradient(to right, rgba(0,0,0,0.9), transparent);
