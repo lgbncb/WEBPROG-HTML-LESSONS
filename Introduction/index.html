@@ -3,167 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website Portfolio | Netflix Style</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body id="top">
+    <title>Lance Buncab | Portfolio</title>
 
-    <!-- Navigation bar -->
-    <header class="navbar">
-        <div class="logo">Lance's Portfolio</div>
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body id="app" v-cloak>
+
+    <!-- NAVBAR -->
+    <header class="navbar" :class="{ 'nav-solid': scrolled }">
+        <a href="#top" class="logo">Lance's Portfolio</a>
+
         <nav>
             <ul>
                 <li><a href="#top">Home</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#goals">Goals</a></li>
-                <li><a href="#experience">IT Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#message" class="btn-red">Message Me</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
+        <button class="theme-toggle" @click="toggleTheme">
+            {{ theme === 'dark' ? '🌙' : '☀️' }}
+        </button>
     </header>
 
-    <!-- Banner -->
-     <!-- Slideshow of my Pictures in the banner -->
-    <section class="hero">
-        <div class="hero-slides">
-            <div class="hero-slide active" style="background-image: url('Images/Photo1.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('Images/Photo2.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('Images/Photo3.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('Images/Photo4.jpg');"></div>
-        </div>
+    <!-- HERO -->
+    <section class="hero" id="top" :style="{ backgroundImage: `url(${heroImages[currentHeroIndex]})` }">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1>My College Story</h1>
                 <p>2nd Year BS Computer Science Student | Tech Enthusiast</p>
-                <div class="hero-btns">
-                    <a href="#experience" class="play-btn">▶ View Experience</a>
-                    <a href="#about" class="info-btn">ⓘ More Info</a>
+                <div class="hero-buttons">
+                    <a href="#skills" class="hero-btn play-btn">▶ View Experience</a>
+                    <a href="#about" class="hero-btn info-btn">ⓘ More Info</a>
                 </div>
             </div>
         </div>
     </section>
 
     <main>
-        <!-- About Me -->
+
+        <!-- ABOUT -->
         <section id="about" class="row">
             <h2>About Me</h2>
             <div class="card">
-                <img src="Images/about.jpg.jpg" alt="Profile Picture">
+                <img src="../Images/about.jpg.jpg" alt="Profile Picture">
                 <div class="card-text">
-                    <p>Greetings! I am Lance Gabriel M. Buncab, but your can call me Gab. My passion for technology is matched by my dedication to leading and connecting with others. 
-                    My role as the External Relations Assistant Director for the Junior Philippine Computer Society have given me hands-on experience in event management, public relations, and speaker coordination. 
-                    I have also enjoyed stepping into the role of a host, which has improved my communication skills and helped me build confidence. I'm a believer in continuous exploration, both personally and professionally. 
-                    I'm an avid music and aviation enthusiast, always seeking to learn and grow beyond my academic work. As an active member of the Microsoft Community - APC Chapter, I stay connected to the latest trends 
-                    and collaborative projects in the tech world. I am an active seeker of new opportunities that challenge me to apply my skills and contribute to meaningful projects. I'm eager to continue growing professionally 
-                    and make a positive impact in tech and on society.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section id="education" class="row">
-            <h2>Education</h2>
-            <div class="card">
-                <img src="Images/education.jpeg" alt="Asia Pacific College">
-                <div class="card-text">
-                    <p>Currently studying at Asia Pacific College as 2nd Year BS Computer Science Student specializing in Cybersecurity and Forensics.
-                        
+                    <p>
+                        Greetings! I am Lance Gabriel M. Buncab, but you can call me Gab.
+                        I am a passionate Computer Science student with strong interests in leadership,
+                        technology, and continuous learning. I currently serve as the External Relations
+                        Assistant Director for the Junior Philippine Computer Society, where I gained
+                        hands-on experience in event coordination, public relations, and professional networking.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Hobbies -->
+        <!-- EDUCATION -->
+        <section id="education" class="row">
+            <h2>Education</h2>
+            <div class="card">
+                <img src="../Images/education.jpeg" alt="Asia Pacific College">
+                <div class="card-text">
+                    <p>
+                        Currently, I am studying at Asia Pacific College as a 2nd Year BS Computer Science
+                        student specializing in Cybersecurity and Forensics.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBBIES -->
         <section id="hobbies" class="row">
             <h2>Hobbies</h2>
             <div class="card">
-                <img src="Images/hobbies.jpg.jpg" alt="My Hobbies">
+                <img src="../Images/hobbies.jpg.jpg" alt="My Hobbies">
                 <div class="card-text">
-                    <p>Aside from my academic pursuits, I enjoy hobbies that make me happy and help me relax, 
-                    such as aviation, cycling, playing drums, going to the firing range, and exploring new cultures and delicacies.</p>
+                    <p>
+                        Aside from academics, I enjoy aviation, cycling, playing drums,
+                        visiting the firing range, and exploring different cultures and cuisines.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Goals -->
+        <!-- GOALS -->
         <section id="goals" class="row">
             <h2>Goals</h2>
             <div class="card">
-                <img src="Images/goals.jpg.jpg" alt="My 2026 Goals">
+                <img src="../Images/goals.jpg.jpg" alt="My 2026 Goals">
                 <div class="card-text">
-                    <p>My goals for this year 2026 is to get fit, improve my coding skills and 
-                        create new projects that contribute to my growth and the community. Another goal for this year is to
-                        travel and explore new places to enhance my experiences and broaden my horizons.</p>
+                    <p>
+                        My goals for 2026 include improving my physical fitness, enhancing my coding
+                        skills, creating impactful projects, and exploring new places to broaden my
+                        personal and professional experiences.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- IT experience -->
-        <section id="experience" class="row">
-            <h2>IT Experience</h2>
-            <div class="card">
-                <img src="Images/experience.jpg.jpg" alt="Technical Skills">
-                <div class="card-text">
-                    <p>My IT experience includes working with various programming languages such as HTML, CSS, Java, Python, SQL, Arduino TinkerCad, and PacketTracer . I have also built several projects and activities that 
-                        demonstrate my skills and knowledge in these areas. I have also learned about cybersecurity principles and digital forensics techniques. I was able to join networking 
-                        external events that honed my skills and expanded my professional network. These experiences have been part in shaping my career path and professional development.</p>
+        <!-- SKILLS -->
+        <section id="skills" class="row">
+            <h2>Skills Leaderboard</h2>
+
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h3>Languages</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/python.png" alt="Python">
+                        <img src="../Images/java.png" alt="Java">
+                        <img src="../Images/html.png" alt="HTML">
+                        <img src="../Images/css.png" alt="CSS">
+                        <img src="../Images/javascript.png" alt="JavaScript">
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Frameworks</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/react.png" alt="React">
+                        <img src="../Images/bootstrap.png" alt="Bootstrap">
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>Databases</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/mysql.png" alt="MySQL">
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>DevOps / Tools</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/tinkercad.png" alt="TinkerCAD">
+                        <img src="../Images/packettracer.webp" alt="Packet Tracer">
+                        <img src="../Images/kali_linux.png" alt="Kali Linux">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Photo Gallery -->
+        <!-- PROJECTS -->
+        <section id="projects" class="row projects">
+            <div class="coming-soon-container">
+                <p class="coming-soon-text">Coming soon...</p>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
         <section id="gallery" class="row">
             <h2>Photo Gallery</h2>
-            <div class="gallery-container">
-                <img src="Images/Photo1.jpg" alt="Gallery Photo 1">
-                <img src="Images/Photo2.jpg" alt="Gallery Photo 2">
-                <img src="Images/Photo3.jpg" alt="Gallery Photo 3">
-                <img src="Images/Photo4.jpg" alt="Gallery Photo 4">
+
+            <div class="gallery-scroll">
+                <img v-for="(img, index) in images" 
+                     :key="index" 
+                     :src="img" 
+                     @click="openImage(img)"
+                     style="cursor: pointer;"
+                     alt="Gallery Photo">
+            </div>
+
+            <div class="modal" v-if="selectedImage" @click.self="closeImage">
+                <img :src="selectedImage" alt="Full size image">
+                <button @click="closeImage">✖</button>
             </div>
         </section>
 
-        <!-- Contact form -->
-        <section id="message" class="row contact-row">
-            <h2>Message Me</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="How can I help you?" rows="5" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+        <!-- CONTACT -->
+        <section id="contact" class="row contact">
+            <video class="contact-video-bg" autoplay loop muted playsinline>
+                <source src="../Images/contact-video-space.mp4" type="video/mp4">
+            </video>
+            
+            <div class="contact-container">
+                <h2>Contact Me</h2>
+                
+                <a href="mailto:lancebuncab15@email.com" class="email-btn">📧 lmbuncab@student.apc.edu.ph</a>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/lance-buncab/" target="_blank" rel="noopener" class="social-icon">
+                        <img src="../Images/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/lgbncb" target="_blank" rel="noopener" class="social-icon">
+                        <img src="../Images/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.instagram.com/lg.bncb/" target="_blank" rel="noopener" class="social-icon">
+                        <img src="../Images/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 WEBPROG Midterm Project | Lance Buncab - SF241</p>
+        <p>© 2026 WEBPROG Midterm Project | Lance Buncab - SF241</p>
     </footer>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                header.classList.add('nav-solid');
-            } else {
-                header.classList.remove('nav-solid');
-            }
-        });
-
-        // Hero background slideshow
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        let heroIndex = 0;
-
-        function showNextHeroSlide() {
-            heroSlides[heroIndex].classList.remove('active');
-            heroIndex = (heroIndex + 1) % heroSlides.length;
-            heroSlides[heroIndex].classList.add('active');
-        }
-
-        if (heroSlides.length > 1) {
-            setInterval(showNextHeroSlide, 5000);
-        }
-    </script>
+    <!-- Vue App Script -->
+    <script src="../JS/Vue.js"></script>
 </body>
 </html>
