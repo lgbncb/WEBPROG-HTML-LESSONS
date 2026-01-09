@@ -1,68 +1,60 @@
-# WEBPROG-HTML-LESSONS
-Visit my Website here: https://lgbncb.github.io/WEBPROG-HTML-LESSONS/
-type "Introduction' at the end of the URL link
+**WEBPROG-HTML-LESSONS
+Visit the Live Website:** https://lgbncb.github.io/WEBPROG-HTML-LESSONS/Introduction/#top
 
-🎥 Personal Portfolio: Netflix Theme Website
-Midterm Project | 2nd Year Computer Science
+🎥 **Personal Portfolio:** Netflix Theme Website Midterm Project | 2nd Year Computer Science
 
-📌 **Project Overview**
-This project is a one-page personal portfolio designed with the aesthetic of the Netflix web interface. It showcases technical skills, academic background, and personal interests using modern web development standards.
+📌 Project Overview This project is a high-performance, one-page personal portfolio inspired by the Netflix interface. It utilizes Vue.js 3 for dynamic data rendering and state management, showcasing technical skills, academic background, and personal interests.
 
-🛠️** Project Phases**
-**Phase 1:** Structure & Styling (index.html & style.css)
-Semantic HTML5: Used tags like <header>, <main>, <section>, and <footer> for better SEO and accessibility.
+🛠️ **Project Phases & Tech Stack**
 
-CSS Flexbox & Grid: Implemented a flexible navigation bar and a responsive 4-column photo gallery.
+**Phase 1:** Structure & Styling
+Semantic HTML5: Structured with <header>, <main>, and <section> for accessibility.
 
-Netflix Branding: Used the official Netflix color palette:
+CSS Flexbox & Grid: Powers the responsive navigation and the interactive 4-column photo gallery.
 
-Background: #141414
+Netflix Branding: * Background: #141414
 
 Primary Red: #E50914
 
-Text White: #FFFFFF
+Text: #FFFFFF
 
-**Phase 2: Information & Asset Management**
-Asset Organization: All images are stored within a dedicated /images directory.
+**Phase 2:** Framework Integration (Vue.js 3)
+Reactive Data: Replaced static HTML content with Vue data() objects for easier content management.
 
-Content Sections:
+Dynamic Styling: Used Vue v-bind (:class) to handle navbar transitions and theme switching.
 
-About Me: Introduction and background.
+Directives: Implemented v-for for the Skills Leaderboard and Photo Gallery to render items dynamically from arrays.
 
-Education: Academic history and current CS degree status.
+**Phase 3:** Interactivity & UX
+Dark/Light Mode: A custom theme-toggle method using Vue state.
 
-Hobbies/Goals: Personal interests and career aspirations.
+Intersection Observer: Integrated within the mounted() lifecycle hook to trigger "fade-in" animations as the user scrolls.
 
-IT Experience: Technical stack (HTML, CSS, JS, etc.).
+Modal System: A reactive image viewer for the gallery using v-if and event handling.
 
-Photo Gallery: Interactive visual display.
+Auto-Slideshow: A hero section background rotator using setInterval within the Vue instance.
 
-**Phase 3:** Interactivity & Refinement
-DOM Manipulation: Vanilla JavaScript used to toggle a solid background on the navbar upon scrolling past 100px.
+🚀** How to Run Locally**
 
-Transitions: Added ease-in-out transitions on hover for all content cards and gallery images.
-
-Form Validation: Built a "Message Me" contact form with required field validation.
-
-🚀** How to Run locally**
 Clone the repository:
 
 Bash
 
-git clone https://github.com/your-username/your-repo-name.git
-Navigate to the project folder.
+git clone https://github.com/lgbncb/WEBPROG-HTML-LESSONS.git
+Navigate to the /Introduction folder.
 
-Ensure your images are located in the /images folder.
+Important: Ensure your file structure remains as follows:
 
-Open index.html in your preferred browser.
 
-⚖️ **Validation**
-This project has been tested and passed the following:
+⚖️ **Validation & Compatibility**
 
-W3C HTML Validator: Validated for semantic correctness and alt attribute compliance.
+Vue.js 3: Powered by the Global Build CDN.
 
-W3C CSS Validator: Validated for syntax errors and standard properties.
+Responsive Design: Fully tested for Desktop and Mobile viewports.
 
-______________________________________________________________________________________
-Developed by: Lance Gabriel m. Buncab | SF241
-WEBPROG Midterm Project
+Path Correction: Optimized for GitHub Pages case-sensitive routing.
+
+-------------------------------------------------------------------------
+**Developed by:** Lance Gabriel M. Buncab | SF241
+
+**WEBPROG Midterm Project**
