@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lance Buncab | Portfolio</title>
+
+    <!-- Vue 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="app" v-cloak :class="theme">
+<body id="app" v-cloak>
 
+    <!-- NAVBAR -->
     <header class="navbar" :class="{ 'nav-solid': scrolled }">
         <a href="#top" class="logo">Lance's Portfolio</a>
+
         <nav>
             <ul>
                 <li><a href="#top">Home</a></li>
@@ -25,12 +30,14 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+
         <button class="theme-toggle" @click="toggleTheme">
             {{ theme === 'dark' ? '🌙' : '☀️' }}
         </button>
     </header>
 
-    <section class="hero" id="top" :style="{ backgroundImage: 'url(' + heroImages[currentHeroIndex] + ')' }">
+    <!-- HERO -->
+    <section class="hero" id="top" :style="{ backgroundImage: `url(${heroImages[currentHeroIndex]})` }">
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1>My College Story</h1>
@@ -44,28 +51,71 @@
     </section>
 
     <main>
+
+        <!-- ABOUT -->
         <section id="about" class="row">
             <h2>About Me</h2>
             <div class="card">
                 <img src="../Images/about.jpg.jpg" alt="Profile Picture">
                 <div class="card-text">
-                    <p>Greetings! I am Lance Gabriel M. Buncab, but you can call me Gab. I am a passionate Computer Science student with strong interests in leadership, technology, and continuous learning. I currently serve as the External Relations Assistant Director for the Junior Philippine Computer Society.</p>
+                    <p>
+                        Greetings! I am Lance Gabriel M. Buncab, but you can call me Gab.
+                        I am a passionate Computer Science student with strong interests in leadership,
+                        technology, and continuous learning. I currently serve as the External Relations
+                        Assistant Director for the Junior Philippine Computer Society, where I gained
+                        hands-on experience in event coordination, public relations, and professional networking.
+                    </p>
                 </div>
             </div>
         </section>
 
+        <!-- EDUCATION -->
         <section id="education" class="row">
             <h2>Education</h2>
             <div class="card">
                 <img src="../Images/education.jpeg" alt="Asia Pacific College">
                 <div class="card-text">
-                    <p>Currently, I am studying at Asia Pacific College as a 2nd Year BS Computer Science student specializing in Cybersecurity and Forensics.</p>
+                    <p>
+                        Currently, I am studying at Asia Pacific College as a 2nd Year BS Computer Science
+                        student specializing in Cybersecurity and Forensics.
+                    </p>
                 </div>
             </div>
         </section>
 
+        <!-- HOBBIES -->
+        <section id="hobbies" class="row">
+            <h2>Hobbies</h2>
+            <div class="card">
+                <img src="../Images/hobbies.jpg.jpg" alt="My Hobbies">
+                <div class="card-text">
+                    <p>
+                        Aside from academics, I enjoy aviation, cycling, playing drums,
+                        visiting the firing range, and exploring different cultures and cuisines.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOALS -->
+        <section id="goals" class="row">
+            <h2>Goals</h2>
+            <div class="card">
+                <img src="../Images/goals.jpg.jpg" alt="My 2026 Goals">
+                <div class="card-text">
+                    <p>
+                        My goals for 2026 include improving my physical fitness, enhancing my coding
+                        skills, creating impactful projects, and exploring new places to broaden my
+                        personal and professional experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
         <section id="skills" class="row">
             <h2>Skills Leaderboard</h2>
+
             <div class="skills-grid">
                 <div class="skill-box">
                     <h3>Languages</h3>
@@ -74,38 +124,93 @@
                         <img src="../Images/java.png" alt="Java">
                         <img src="../Images/html.png" alt="HTML">
                         <img src="../Images/css.png" alt="CSS">
-                        <img src="../Images/javascript.png" alt="JS">
+                        <img src="../Images/javascript.png" alt="JavaScript">
                     </div>
                 </div>
+
+                <div class="skill-box">
+                    <h3>Frameworks</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/react.png" alt="React">
+                        <img src="../Images/bootstrap.png" alt="Bootstrap">
+                    </div>
                 </div>
+
+                <div class="skill-box">
+                    <h3>Databases</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/mysql.png" alt="MySQL">
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <h3>DevOps / Tools</h3>
+                    <div class="skill-icons">
+                        <img src="../Images/tinkercad.png" alt="TinkerCAD">
+                        <img src="../Images/packettracer.webp" alt="Packet Tracer">
+                        <img src="../Images/kali_linux.png" alt="Kali Linux">
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- PROJECTS -->
+        <section id="projects" class="row projects">
+            <div class="coming-soon-container">
+                <p class="coming-soon-text">Coming soon...</p>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
         <section id="gallery" class="row">
             <h2>Photo Gallery</h2>
+
             <div class="gallery-scroll">
-                <img v-for="(img, index) in images" :key="index" :src="img" @click="openImage(img)" style="cursor: pointer;">
+                <img v-for="(img, index) in images" 
+                     :key="index" 
+                     :src="img" 
+                     @click="openImage(img)"
+                     style="cursor: pointer;"
+                     alt="Gallery Photo">
             </div>
+
             <div class="modal" v-if="selectedImage" @click.self="closeImage">
-                <img :src="selectedImage" alt="Full size">
+                <img :src="selectedImage" alt="Full size image">
                 <button @click="closeImage">✖</button>
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact" class="row contact">
             <video class="contact-video-bg" autoplay loop muted playsinline>
                 <source src="../Images/contact-video-space.mp4" type="video/mp4">
             </video>
+            
             <div class="contact-container">
                 <h2>Contact Me</h2>
-                <a href="mailto:lmbuncab@student.apc.edu.ph" class="email-btn">📧 Email Me</a>
+                
+                <a href="mailto:lancebuncab15@email.com" class="email-btn">📧 lmbuncab@student.apc.edu.ph</a>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/lance-buncab/" target="_blank" rel="noopener" class="social-icon">
+                        <img src="../Images/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/lgbncb" target="_blank" rel="noopener" class="social-icon">
+                        <img src="../Images/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.instagram.com/lg.bncb/" target="_blank" rel="noopener" class="social-icon">
+                        <img src="../Images/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 WEBPROG | Lance Buncab - SF241</p>
+        <p>© 2026 WEBPROG Midterm Project | Lance Buncab - SF241</p>
     </footer>
 
+    <!-- Vue App Script -->
     <script src="vue.js"></script>
 </body>
 </html>
